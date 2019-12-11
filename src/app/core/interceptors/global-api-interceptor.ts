@@ -13,7 +13,7 @@ export class GlobalApiInterceptor implements HttpInterceptor {
           .set('Content-Type', 'application/json')
           .set('Accept', 'header 2 value')
           .set('Access-Control-Allow-Origin', '*')
-          .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjQ5NjVjNmM5LTM3YmYtNDVjYi05NmJlLTliNmQ0Y2FjY2Y1MCIsImVtYWlsIjoiaWxoYW5AZ3JhdHVkZS5jb20iLCJyb2xlIjoibnVsbCIsIm5iZiI6MTU3NjA2MjY5NSwiZXhwIjoxNTc2MDYzNTk1LCJpYXQiOjE1NzYwNjI2OTV9.UvUwZeNcdifAefEg_OY37cOaE8dKgXaKBQhsfTz4H2Y')
+          .set('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjQ5NjVjNmM5LTM3YmYtNDVjYi05NmJlLTliNmQ0Y2FjY2Y1MCIsImVtYWlsIjoiaWxoYW5AZ3JhdHVkZS5jb20iLCJyb2xlIjoibnVsbCIsIm5iZiI6MTU3NjA2NzcxMCwiZXhwIjoxNTc2MDY4NjEwLCJpYXQiOjE1NzYwNjc3MTB9.z-pmWWplGvvnx0l78vIpOJqys-qpV-EXPgOFen2siCY')
       });
     return next.handle(requestObject);
   }

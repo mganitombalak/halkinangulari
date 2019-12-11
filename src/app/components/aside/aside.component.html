@@ -1,7 +1,6 @@
-<ul class="list-group">
-    <li appAsideHover class="list-group-item">Cras justo odio</li>
-    <li appAsideHover class="list-group-item">Dapibus ac facilisis in</li>
-    <li appAsideHover class="list-group-item">Morbi leo risus</li>
-    <li appAsideHover class="list-group-item">Porta ac consectetur ac</li>
-    <li appAsideHover class="list-group-item">Vestibulum at eros</li>
-  </ul>
+<span *ngIf="model|arraycheck">
+  Lutfen internet baglantinizi kontrol ediniz.
+</span>
+<ul *ngFor="let menuItem of model" class="list-group">
+  <li appAsideHover class="list-group-item">{{menuItem.title | uppercase}}</li>
+</ul>
