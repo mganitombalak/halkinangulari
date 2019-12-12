@@ -8,9 +8,13 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class MenuService extends BaseService<IMenuItem> {
-  constructor(protected httpClient: HttpClient) {
-    super(httpClient);
-    this.serviceUrl = 'menu';
+export class MenuService {
+  // extends BaseService<IMenuItem> {
+  //   constructor(protected httpClient: HttpClient) {
+  //     super(httpClient);
+  //     this.serviceUrl = 'menu';
+  //   }
+  findAll(): Array<IMenuItem> {
+    return [{ title: 'Kategori', url: '/category' }, { title: 'Birimler', url: '/units' }];
   }
 }

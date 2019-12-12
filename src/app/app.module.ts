@@ -10,6 +10,7 @@ import { DropDownMenuDirective } from './core/directives/dropdown-menu.directive
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GlobalApiInterceptor } from './core/interceptors/global-api-interceptor';
 import { ArrayCheckPipe } from './core/pipes/array-check.pipe';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ArrayCheckPipe } from './core/pipes/array-check.pipe';
     AsideComponent,
     AsideHoverDirective,
     DropDownMenuDirective,
-    ArrayCheckPipe
+    ArrayCheckPipe,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

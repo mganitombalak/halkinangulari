@@ -2,5 +2,7 @@
   Lutfen internet baglantinizi kontrol ediniz.
 </span>
 <ul *ngFor="let menuItem of model" class="list-group">
-  <li appAsideHover class="list-group-item">{{menuItem.title | uppercase}}</li>
+  <a routerLink="{{menuItem.url}}">
+    <li appAsideHover class="list-group-item">{{menuItem.title}}</li>
+  </a>
 </ul>

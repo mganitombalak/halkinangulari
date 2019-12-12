@@ -13,8 +13,9 @@ export class AsideComponent implements AfterViewInit {
   constructor(private menuService: MenuService) { }
 
   ngAfterViewInit(): void {
-    this.menuService.findAll().subscribe(r => {
-      this.model = r.data;
-    });
+    this.model = this.menuService.findAll();
+    // .subscribe(r => {
+    //   this.model = r.data;
+    // });
   }
 }
