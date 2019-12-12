@@ -23,8 +23,8 @@ export class ModalService {
   }
 
   open(options: IModalOptions): void {
-    this.modalSetupOptions.modalComponent.onOpening();
     this.modalOptions = options;
+    this.modalSetupOptions.modalComponent.onOpening();
     this.renderer.setStyle(this.modalSetupOptions.modalContainer.nativeElement, 'display', 'block');
     setTimeout(() => this.renderer.addClass(this.modalSetupOptions.modalContainer.nativeElement, 'show'), 100);
 

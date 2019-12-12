@@ -12,6 +12,7 @@ export class ModalComponent implements OnInit, AfterViewInit {
 
   @ViewChild('globalModal', { static: false }) modalElement: ElementRef;
   @ViewChild(ModalBodyContainerDirective, { static: false }) modalContentHost: ModalBodyContainerDirective;
+
   constructor(public modalService: ModalService, private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {

@@ -16,7 +16,7 @@ import { CategoryDetailComponent } from './components/category-detail/category-d
     AgGridModule.withComponents([ActionGridCellComponent])
   ],
   providers: [CategoryService],
-  exports: [CategoryDetailComponent]
+  entryComponents: [CategoryDetailComponent]
 
 })
 export class CategoryModule { }
