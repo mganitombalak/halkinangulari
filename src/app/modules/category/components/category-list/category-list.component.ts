@@ -14,8 +14,8 @@ export class CategoryListComponent implements AfterViewInit, OnDestroy {
   // private categoryServiceSubscription: Subscription;
   model: Array<ICategory>;
   protected columnDefs = [
-    { headerName: 'Display Order', field: 'displayOrder' },
-    { headerName: 'Adi', field: 'name' },
+    { headerName: 'Display Order', field: 'displayOrder', sortable: true, filter: true, sort: 'asc' },
+    { headerName: 'Adi', field: 'name', filter: true },
     { headerName: 'Aktif/Pasif', field: 'isActive' },
     { headerName: 'Oluşturulma Tarihi', field: 'createdAt' }
   ];
