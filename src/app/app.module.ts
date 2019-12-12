@@ -11,6 +11,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GlobalApiInterceptor } from './core/interceptors/global-api-interceptor';
 import { ArrayCheckPipe } from './core/pipes/array-check.pipe';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ActionGridCellComponent } from './modules/shared/components/action-grid-cell/action-grid-cell.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     AsideHoverDirective,
     DropDownMenuDirective,
     ArrayCheckPipe,
-    DashboardComponent
+    DashboardComponent,
+    ActionGridCellComponent
   ],
   imports: [
     BrowserModule,
