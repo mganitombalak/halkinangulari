@@ -10,6 +10,7 @@ import { ActionGridCellComponent } from './components/action-grid-cell/action-gr
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [ActionGridCellComponent]
 })
 export class SharedModule { }
