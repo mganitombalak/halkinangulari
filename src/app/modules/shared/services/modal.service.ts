@@ -23,12 +23,14 @@ export class ModalService {
   }
 
   open(options: IModalOptions): void {
+    this.modalSetupOptions.modalComponent.onOpening();
     this.modalOptions = options;
     this.renderer.setStyle(this.modalSetupOptions.modalContainer.nativeElement, 'display', 'block');
     setTimeout(() => this.renderer.addClass(this.modalSetupOptions.modalContainer.nativeElement, 'show'), 100);
 
   }
   close(): void {
+    this.modalSetupOptions.modalComponent.onClosing();
     this.renderer.setStyle(this.modalSetupOptions.modalContainer.nativeElement, 'display', 'none');
     setTimeout(() => this.renderer.removeClass(this.modalSetupOptions.modalContainer.nativeElement, 'hide'), 100);
   }

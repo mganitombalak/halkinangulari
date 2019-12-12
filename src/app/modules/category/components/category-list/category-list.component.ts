@@ -5,6 +5,7 @@ import { ICategory } from 'src/app/core/models/ICategory';
 import { take } from 'rxjs/operators';
 import { ActionGridCellComponent } from 'src/app/modules/shared/components/action-grid-cell/action-grid-cell.component';
 import { ModalService } from 'src/app/modules/shared/services/modal.service';
+import { CategoryDetailComponent } from '../category-detail/category-detail.component';
 
 @Component({
   selector: 'app-category-list',
@@ -41,7 +42,7 @@ export class CategoryListComponent implements AfterViewInit, OnDestroy {
     this.modalService.open(
       {
         title: `Edit ${data.name}`,
-        activeComponent: null,
+        activeComponent: CategoryDetailComponent,
         componentMode: ComponentMode.Edit,
         data: null,
         showModalFooter: false,
