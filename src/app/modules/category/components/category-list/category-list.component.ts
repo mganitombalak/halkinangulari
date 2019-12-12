@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { ICategory } from 'src/app/core/models/ICategory';
 import { take } from 'rxjs/operators';
 import { ActionGridCellComponent } from 'src/app/modules/shared/components/action-grid-cell/action-grid-cell.component';
+import { ModalService } from 'src/app/modules/shared/services/modal.service';
 
 @Component({
   selector: 'app-category-list',
@@ -23,7 +24,7 @@ export class CategoryListComponent implements AfterViewInit, OnDestroy {
   ];
 
   gridContext: any;
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService, private modalService: ModalService) { }
 
   ngAfterViewInit(): void {
     // this.categoryServiceSubscription =
@@ -37,7 +38,16 @@ export class CategoryListComponent implements AfterViewInit, OnDestroy {
   }
 
   onEditClicked(data: ICategory): void {
-    console.log(`${data.name} is editing.`);
+    this.modalService.open(
+      {
+        title: `Edit ${data.name}`,
+        activeComponent: null,
+        componentMode: ComponentMode.Edit,
+        data: null,
+        showModalFooter: false,
+        showModalHeader: true
+      });
+
   }
   onDeleteClicked(data: ICategory): void {
     console.log(`${data.name} is deleting.`);
