@@ -20,6 +20,6 @@
           </div>
         </li>
       </ul>
-      <button type="button" class="btn btn-primary">Login</button>
+      <a class="btn btn-primary" (click)="loginLogout()" [innerText]="this.isAuthenticated?'Logout':'Login'"></a>
     </div>
   </nav>
