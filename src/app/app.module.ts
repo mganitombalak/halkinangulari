@@ -11,6 +11,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GlobalApiInterceptor } from './core/interceptors/global-api-interceptor';
 import { ArrayCheckPipe } from './core/pipes/array-check.pipe';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { UnAuthorizedResponseInterceptor } from './core/interceptors/unauthorized-interceptor';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: GlobalApiInterceptor,
+    multi: true
+  },{
+    provide: HTTP_INTERCEPTORS,
+    useClass: UnAuthorizedResponseInterceptor,
     multi: true
   }],
   bootstrap: [AppComponent]

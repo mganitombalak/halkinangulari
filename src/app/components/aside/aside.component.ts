@@ -9,7 +9,7 @@ import { IMenuItem } from 'src/app/core/models/IMenuItem';
 })
 export class AsideComponent implements AfterViewInit {
 
-  model: Array<IMenuItem>;
+  model: Array<IMenuItem> = null;
   constructor(private menuService: MenuService) { }
 
   ngAfterViewInit(): void {

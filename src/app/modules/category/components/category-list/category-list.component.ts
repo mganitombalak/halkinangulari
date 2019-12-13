@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
 import { Subscription } from 'rxjs';
 import { ICategory } from 'src/app/core/models/ICategory';
@@ -12,7 +12,7 @@ import { CategoryDetailComponent } from '../category-detail/category-detail.comp
   templateUrl: './category-list.component.html',
   styleUrls: ['./category-list.component.css']
 })
-export class CategoryListComponent implements AfterViewInit, OnDestroy {
+export class CategoryListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // private categoryServiceSubscription: Subscription;
   model: Array<ICategory>;
@@ -26,13 +26,14 @@ export class CategoryListComponent implements AfterViewInit, OnDestroy {
 
   gridContext: any;
   constructor(private categoryService: CategoryService, private modalService: ModalService) { }
-
+  ngOnInit(): void {
+    this.gridContext = { componentParent: this };
+  }
   ngAfterViewInit(): void {
     // this.categoryServiceSubscription =
     this.categoryService.findAll().pipe(take(1)).subscribe(r => {
       this.model = r.data;
     });
-    this.gridContext = { componentParent: this };
   }
   ngOnDestroy(): void {
     // this.categoryServiceSubscription.unsubscribe();
